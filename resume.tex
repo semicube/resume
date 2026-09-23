@@ -1,0 +1,172 @@
+\documentclass[10pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathpazo}
+\usepackage[a4paper,margin=0.75in,top=0.5in]{geometry}
+\usepackage{microtype}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{accentcolor}{RGB}{160, 0, 0}
+
+\newcommand{\styledLink}[2]{\href{#1}{\textcolor{accentcolor}{\underline{#2}}}}
+\newcommand{\splitEntry}[2]{#1\hfill\textit{#2}}
+
+\hypersetup{
+  pdftitle={John Doe's Resume},
+  pdfauthor={John Doe},
+  pdfsubject={Resume},
+}
+
+\newenvironment{resumeSection}[1]{
+  \noindent
+  \raggedleft\textcolor{accentcolor}{\textbf{\textsc{#1}}}\hspace{5pt}%
+  \leaders\vrule height 0.4ex depth -0.3ex\hfill\kern0pt
+  \par
+  \raggedright
+}{}
+
+% % Alternative header style (needs \usepackage{ulem} for \uline)
+% \usepackage{ulem} 
+% \newenvironment{resumeSection}[1]{%
+%   \noindent
+%   \uline{\textcolor{accentcolor}{\textbf{\textsc{#1}}}\hfill}
+%   \par
+%   \raggedright
+% }{}
+
+\setlist[itemize,1]{leftmargin=1em, label={}, nosep, itemsep=1.5ex}
+\setlist[itemize,2]{leftmargin=1.25em, nosep, topsep=2pt}
+
+\linespread{1.05}
+\pagestyle{empty}
+
+\begin{document}
+
+  \textbf{\Large John Doe} \\
+  \textit{Aspiring AI Researcher | Building Scalable Machine Learning and Distributed Systems}
+
+  {
+    Homepage: \styledLink{https://johndoe.ai}{\textit{johndoe.ai}} --
+    Email: \styledLink{mailto:john.doe@example.com}{\textit{john.doe@example.com}} --
+    LinkedIn: \styledLink{https://linkedin.com/in/john-doe}{\textit{/in/john-doe}} --
+    Github: \styledLink{https://github.com/johndoe}{\textit{@johndoe}}
+  }
+
+  \begin{resumeSection}{Education}
+    \begin{itemize}
+      \item {
+        \splitEntry{\textbf{Massachusetts Institute of Technology (MIT)}}{Cambridge, MA}
+        
+        \splitEntry{Bachelor of Science in Computer Science and Engineering}{August 2021 -- May 2025}
+
+        \begin{itemize}
+          \item \textbf{CGPA:} 5.0/5.0
+          \item \textbf{Minor:} \textit{Artificial Intelligence and Decision Making}
+          \item \textbf{Honors:} \textit{Eta Kappa Nu}, \textit{Tau Beta Pi}, \textit{Dean's List (all semesters)}
+          \item \textbf{Relevant Coursework:} \textit{Advanced Machine Learning, Reinforcement Learning, Deep Generative Models, Algorithms, Distributed Systems, Quantum Computation}
+        \end{itemize}
+      }
+    \end{itemize}
+  \end{resumeSection}
+
+  \begin{resumeSection}{Technical Skills}
+    \begin{itemize}[nosep]
+      \item \textbf{Languages:} Python, C++, Rust
+      \item \textbf{Frameworks and Libraries:} PyTorch, BioPython, ROS, React
+      \item \textbf{Tools and Platforms:} CUDA, GCP
+    \end{itemize}
+  \end{resumeSection}
+
+  \begin{resumeSection}{Experience}
+    \begin{itemize}
+      \item {
+        \splitEntry{\textbf{Research Intern, \textit{DeepMind}}, London, UK}{Summer 2024}
+
+        \begin{itemize}
+          \item Collaborated with the AlphaFold team to develop protein structure prediction models integrating graph transformers and diffusion processes.
+          \item Optimized the graph transformer inference pipeline by implementing custom JAX kernels, achieving a 3x speedup in structural generation without degrading pLDDT confidence scores.
+        \end{itemize}
+      }
+
+      \item {
+          \splitEntry{\textbf{Undergraduate Researcher}, \textit{MIT CSAIL}, Cambridge, MA}{2023 -- Present}
+
+          \begin{itemize}
+            \item Supervised by Prof.\ Regina Barzilay on LLM alignment and interpretability.
+            \item Led development of ``NeuroLens'', a visualization toolkit to probe neuron activations in transformer models.
+            \item Open-sourced the toolkit to the mechanistic interpretability community, facilitating the identification of polysemantic neurons in models up to 70B parameters.
+          \end{itemize}
+      }
+
+      \item {
+        \splitEntry{\textbf{Software Engineering Intern}, \textit{OpenAI}, San Francisco, CA}{Summer 2023}
+
+        \begin{itemize}
+          \item Contributed to optimization of inference pipelines for GPT models using CUDA kernels and pre-training.
+          \item Reduced serving latency by 18\% on large-scale distributed inference systems.
+        \end{itemize}
+      }
+    \end{itemize}
+  \end{resumeSection}
+
+  \begin{resumeSection}{Selected Projects}
+    \begin{itemize}
+      \item {
+        \splitEntry{\textbf{EvoDiff} \textit{(Python, PyTorch, BioPython)}}{Capstone Project}
+
+        \begin{itemize}
+          \item Built a protein sequence diffusion model achieving state-of-the-art performance in unconditional protein generation tasks; published preprint on arXiv.
+        \end{itemize}
+      }
+
+      \item {
+        \splitEntry{\textbf{NeuralFlight} \textit{(C++, ROS, CUDA)}}{}
+
+        \begin{itemize}
+          \item Developed a real-time neural flight controller for drone swarms; winner of the MIT Robotics Innovation Challenge 2024.
+        \end{itemize}
+      }
+
+      \item {
+        \splitEntry{\textbf{Polaris} \textit{(React, Rust, GCP)}}{}
+
+        \begin{itemize}
+          \item Designed a privacy-preserving federated learning platform; deployed a prototype to 15{,}000+ users during HackMIT.
+        \end{itemize}
+      }
+    \end{itemize}
+  \end{resumeSection}
+
+  \begin{resumeSection}{Publications}
+    \begin{itemize}
+      \item {
+        \textbf{John Doe}, Peter Smith, Sam Jackson \textit{(Dec 2025)}. ``Mechanistic Localization of Latent Knowledge in Transformer Activations.'' Presented at the \textit{BlackboxNLP Workshop on Interpreting Neural Networks}.
+      }
+    \end{itemize}
+  \end{resumeSection}
+
+  \begin{resumeSection}{Leadership and Activities}
+    \begin{itemize}
+      \item {
+        \splitEntry{\textbf{Co-President}, \textit{MIT AI Alignment Club}, Cambridge, MA}{Sep 2023 -- 2025}
+
+        \begin{itemize}
+          \item Direct weekly reading groups and hands-on hackathons for 200+ members.
+          \item  Secured \$15,000 in funding from external research organizations to sponsor student compute grants.
+        \end{itemize}
+      }
+      \item {
+        \splitEntry{\textbf{Lead Organizer}, \textit{HackMIT}, Cambridge, MA}{Feb 2022 -- Nov 2023}
+
+        \begin{itemize}
+          \item Coordinated logistics and managed corporate sponsorships for MIT’s premier undergraduate hackathon.
+        \end{itemize}
+      }
+    \end{itemize}
+  \end{resumeSection}
+
+\end{document}

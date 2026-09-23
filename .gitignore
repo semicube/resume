@@ -1,0 +1,29 @@
+# Output directory
+build/
+
+# LaTeX intermediate / temporary files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.fmt
+*.glg
+*.glo
+*.gls
+*.idx
+*.ilg
+*.ind
+*.ist
+*.log
+*.out
+*.pdf
+*.run.xml
+*.synctex.gz
+*.toc
+
+# OS specific
+.DS_Store
+Thumbs.db
+*.swp
