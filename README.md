@@ -2,7 +2,7 @@
 
 This repository contains the LaTeX resume template I use.
 
-> **Note:** For demonstration purposes, all personal information, experience, and project details within the template document were generated using LLMs.
+> **Note:** For demonstration purposes, all personal information, experience, and project details within the LaTeX source file were generated using LLMs.
 
 ## Prerequisites
 
